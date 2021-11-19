@@ -147,6 +147,7 @@ $(document).ready(() => {
         };
         globalData.push(ppFormData);
       }
+
       updateData(globalData);
       $(":input", "#pp-form").val("");
     }

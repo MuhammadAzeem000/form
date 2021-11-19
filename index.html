@@ -89,7 +89,7 @@
                                             <div class="form-label mb-2">PO #</div>
                                             <div class="input-group">
                                                 <input type="number" class="form-control" placeholder="PO #"
-                                                    id="po-number" required>
+                                                    id="po-number" min="0" required>
                                             </div>
                                         </div>
                                     </div>
@@ -100,8 +100,9 @@
                                             <div class="select2-drpdwn">
                                                 <label class="form-label">ITEM</label>
                                                 <select class="js-example-basic-single" id="item-select">
+                                                    <option disabled selected>--Select Item--</option>
                                                     <optgroup label="Developer">
-                                                        <option value="AL" selected="selected">Alabama</option>
+                                                        <option value="AL">Alabama</option>
                                                         <option value="WY">Wyoming</option>
                                                     </optgroup>
                                                     <optgroup label="Designer">
@@ -120,6 +121,7 @@
                                             <div class="select2-drpdwn">
                                                 <label class="form-label">FABRIC DETAIL</label>
                                                 <select class="js-example-basic-single" required id="fabric-select">
+                                                    <option disabled selected>--Select Fabric--</option>
                                                     <optgroup label="Developer">
                                                         <option value="AL">Alabama</option>
                                                         <option value="WY">Wyoming</option>
@@ -140,7 +142,7 @@
                                             <div class="form-label mb-2">GSM</div>
                                             <div class="input-group">
                                                 <input type="number" class="form-control" placeholder="GSM" required
-                                                    id="gsm-number">
+                                                    id="gsm-number" min="0">
                                             </div>
                                         </div>
                                     </div>
