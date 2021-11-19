@@ -1,16 +1,25 @@
 $(document).ready(() => {
-  const sizeSelectDownData = [
+  var sizeSelectDownData = [
     { MasterValue: "S", MasterValueID: 203 },
     { MasterValue: "M", MasterValueID: 204 },
     { MasterValue: "L", MasterValueID: 205 },
   ];
 
+  const getDropDown = (URL) => {
+    fetch(URL)
+      .then((response) => response.json())
+      .then((data) => {
+        //sizeSelectDownData = data;
+        return data;
+      });
+  };
+
   let globalData = [
     {
       id: 1,
       po: 22,
-      item: "Alabama",
-      fabricDetail: "Alabama",
+      item: "Peter",
+      fabricDetail: "John Doe",
       gsm: 12,
       date: "12/12/1222",
       remarks: "remarks..",
@@ -20,7 +29,7 @@ $(document).ready(() => {
           sizeChart: [
             {
               id: 1,
-              size: 14,
+              size: "L",
               qty: 1000,
               cost: 200,
               ws: 200,
@@ -29,7 +38,7 @@ $(document).ready(() => {
             },
             {
               id: 2,
-              size: 14,
+              size: "S",
               qty: 1000,
               cost: 200,
               ws: 200,
@@ -44,7 +53,7 @@ $(document).ready(() => {
           sizeChart: [
             {
               id: 3,
-              size: 17,
+              size: "S",
               qty: 1000,
               cost: 200,
               ws: 200,
@@ -53,7 +62,7 @@ $(document).ready(() => {
             },
             {
               id: 4,
-              size: 17,
+              size: "M",
               qty: 1000,
               cost: 200,
               ws: 200,
@@ -110,7 +119,7 @@ $(document).ready(() => {
         if (getRowDataForUpdate) {
           $("input#po-number").val(getRowDataForUpdate.po);
           $("select#item-select option")
-            .filter(function () {
+            .find(function () {
               return $(this).text() == getRowDataForUpdate.item;
             })
             .prop("selected", true);
@@ -134,7 +143,6 @@ $(document).ready(() => {
           gsm: $("input#gsm-number").val(),
           date: $("input#date-input").val(),
           remarks: $("textarea#remark-input").val(),
-          sizeChart: [],
           subTable: [],
         };
         globalData.push(ppFormData);
@@ -175,6 +183,7 @@ $(document).ready(() => {
   //ON CLOSE MODAL
   $("#close-Modal").on("click", function () {
     $("#field-wrapper").html("");
+    isSubTableUpdated = false;
   });
 
   //==When Click on Modal Button to Open==//
@@ -184,18 +193,22 @@ $(document).ready(() => {
     addInputRowInModal(sizeSelectDownData);
   });
 
-  function addSizeSelectOption(obj) {
+  function addSizeSelectOption(obj, size) {
     var rtn = "";
     $.each(obj, function (idx, value) {
       const { MasterValue, MasterValueID } = value;
-      rtn += `<option value=${MasterValueID}>${MasterValue}</option>`;
+      if (size == MasterValue) {
+        rtn += `<option value=${MasterValueID} selected>${MasterValue}</option>`;
+      } else {
+        rtn += `<option value=${MasterValueID}>${MasterValue}</option>`;
+      }
     });
-    console.log(rtn);
     return rtn;
   }
 
   function addInputRowInModal() {
     let wrapper = $("#field-wrapper");
+    wrapper.html("");
 
     let fieldHTML = `
     <tr>
@@ -231,8 +244,12 @@ $(document).ready(() => {
         let data = [];
 
         let titles = $("[name^=titles]")
-          .map(function (idx, elem) {
-            return $(elem).val();
+          .map(function () {
+            if ($(this).is("select")) {
+              return $(this).find(":selected").text();
+            } else {
+              return $(this).val();
+            }
           })
           .get();
 
@@ -281,15 +298,21 @@ $(document).ready(() => {
         }
       }
       updateData(globalData);
-      $(":input", "#pp-modal-form").val("");
+      $("#sub-table-modal").modal("hide");
     }
   });
 
   //==Render Sub Table==//
   function renderSubTable(obj) {
     var numberofTables = "";
-    obj.forEach((table) => {
+    let total = [2000, 2000];
+    let total1 = [];
+
+    obj.forEach((table, index) => {
       const { subTableid, sizeChart } = table;
+      let val = 0;
+      sizeChart.forEach((table) => (val += parseInt(table.qty)));
+      total1.push(val);
       numberofTables += `<div class="table-responsive mt-1">
       <table class="table table-xs" key=${subTableid}>
       <thead class="thead-light">
@@ -305,7 +328,7 @@ $(document).ready(() => {
       </tr>
       </thead>
       <tbody>
-      ${renderRows(sizeChart)}
+      ${renderRows(sizeChart, total1[index])}
       </tbody>
       </table>
       </div>`;
@@ -315,14 +338,14 @@ $(document).ready(() => {
   }
 
   //==Render Sub Table Rows==//
-  function renderRows(obj) {
+  function renderRows(obj, total) {
     var numberOfRows = "";
     //for iretrate on one time
     let addOnfirst = true;
-    obj.forEach((table) => {
+    obj.forEach((table, index) => {
       const { id, size, qty, cost, ws, retail, margin } = table;
       numberOfRows += `<tr key=${id}>
-        ${addOnfirst && `<td rowspan=${obj.length}>"total</td>`}
+        ${addOnfirst && `<td rowspan=${obj.length}>${total}</td>`}
         <td>${size}</td>
         <td>${qty}</td>
         <td>${cost}</td>
@@ -395,9 +418,7 @@ $(document).ready(() => {
       <td>
       <div class="form-group">
       <select class="form-control" name="titles[]" required>
-      <option value="18">S</option>
-      <option value="10123">M</option>
-      <option value="10124">L</option>
+      ${addSizeSelectOption(sizeSelectDownData, size)}
       </select>
       </div>
       </td>
@@ -427,9 +448,13 @@ $(document).ready(() => {
 
   //Click on Modal minus button to remove inputs
   $(wrapper).on("click", "#remove-modal-field", function (e) {
-    $(this).parent("td").parent("tr").remove(); //Remove field html
+    if ($(this).closest("tbody").children("tr").length > 1) {
+      $(this).parent("td").parent("tr").remove(); //Remove field html
+    }
   });
 
   //on page load
   updateData(globalData);
+  //fetch api
+  getDropDown("https://jsonplaceholder.typicode.com/todos/");
 });

@@ -1,13 +1,13 @@
 .select2 {
-    width: 100% !important;
-  }
+  width: 100% !important;
+}
 
 #sub-size-chart-table > tbody > tr > td {
-  padding: 0.2rem 0.5rem !important; 
+  padding: 0.2rem 0.5rem !important;
 }
 
 #sub-size-chart-table > thead > tr > th {
-  padding: 0.2rem 0.5rem !important; 
+  padding: 0.2rem 0.5rem !important;
 }
 
 .size-chart-modal-table > tbody > tr > td {
@@ -18,7 +18,11 @@
   padding: 0.2rem 0.5rem !important;
 }
 
-table, th, td {
+/*
+table,
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+*/
