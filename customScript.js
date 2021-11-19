@@ -117,21 +117,20 @@ $(document).ready(() => {
           (ele) => ele.id === setMainTableRowId
         );
         if (getRowDataForUpdate) {
-          $("input#po-number").val(getRowDataForUpdate.po);
-          $("select#item-select option")
-            .find(function () {
-              return $(this).text() == getRowDataForUpdate.item;
-            })
-            .prop("selected", true);
-          $("select#fabric-select option")
-            .filter(function () {
-              return $(this).text() == getRowDataForUpdate.fabricDetail;
-            })
-            .prop("selected", true);
-          $("input#gsm-number").val(getRowDataForUpdate.gsm);
-          $("input#date-input").val(getRowDataForUpdate.date);
-          $("textarea#remark-input").val(getRowDataForUpdate.remarks);
+          //populate the form with the values
+          getRowDataForUpdate.po = $("input#po-number").val();
+          getRowDataForUpdate.item = $("select#item-select")
+            .find(":selected")
+            .text();
+          getRowDataForUpdate.fabricDetail = $("select#fabric-select")
+            .find(":selected")
+            .text();
+          getRowDataForUpdate.gsm = $("input#gsm-number").val();
+          getRowDataForUpdate.date = $("input#date-input").val();
+          getRowDataForUpdate.remarks = $("textarea#remark-input").val();
           $("button#pp-form-submit").html("Submit");
+
+          //update the global data
           isMainRowUpdated = false;
         }
       } else {
@@ -148,8 +147,18 @@ $(document).ready(() => {
         globalData.push(ppFormData);
       }
 
-      updateData(globalData);
       $(":input", "#pp-form").val("");
+      /*
+      $("#select2-item-select-container").text("--Select Item--");
+      $("select#item-select option").filter(function (i) {
+        return $(this).attr("selected", true);
+      });
+      $("#select2-fabric-select-container").text("--Select Item--");
+      $("select#fabric-select option").filter(function (i) {
+        return $(this).attr("selected", true);
+      });
+      */
+      updateData(globalData);
     }
   });
 
@@ -165,10 +174,18 @@ $(document).ready(() => {
     $("input#gsm-number").val(gsm),
       $("input#date-input").val(date),
       $("textarea#remark-input").val(remarks);
-    $("select#item-select").append(`<option selected>${item}</option>`);
-    $("select#fabric-select").append(
-      `<option selected>${fabricDetail}</option>`
-    );
+    $("#select2-item-select-container").text(item);
+    $("select#item-select option")
+      .filter(function (i) {
+        return $(this).text() === item;
+      })
+      .attr("selected", true);
+    $("#select2-fabric-select-container").text(fabricDetail);
+    $("select#fabric-select option")
+      .filter(function (i) {
+        return $(this).text() === fabricDetail;
+      })
+      .attr("selected", true);
   });
 
   //on main form row delete
