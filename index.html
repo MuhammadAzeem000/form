@@ -1,282 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="universal admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, universal admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="pixelstrap">
-    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon" />
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="universal admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities."
+    />
+    <meta
+      name="keywords"
+      content="admin template, universal admin template, dashboard template, flat admin template, responsive admin template, web app"
+    />
+    <meta name="author" content="pixelstrap" />
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
     <title>Production Planning</title>
 
     <!--Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css" />
 
     <!-- ico-font -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/icofont.css" />
 
     <!-- Themify icon -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/themify.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/themify.css" />
 
     <!-- Flag icon -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/flag-icon.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/flag-icon.css" />
 
     <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
 
     <!-- App css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
     <!--Select2 css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/select2.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/select2.css" />
 
     <!-- Responsive css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
 
     <!-- DatePicker css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/date-picker.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/date-picker.css" />
 
     <!--Custom CSS-->
-    <link rel="stylesheet" href="customStyle.css">
+    <link rel="stylesheet" href="customStyle.css" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <!-- Loader starts -->
     <div class="loader-wrapper">
-        <div class="loader bg-white">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <h4>Have a great day at work today <span>&#x263A;</span></h4>
-        </div>
+      <div class="loader bg-white">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <h4>Have a great day at work today <span>&#x263A;</span></h4>
+      </div>
     </div>
     <!-- Loader ends -->
 
     <!--page-wrapper Start-->
     <div class="page-wrapper">
-
-        <!--Page Body Start-->
-        <div class="page-body-wrapper">
-
-
-            <div class="page-body">
-
-                <div class="container-fluid">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>PRODUCTION PLANNING</h5>
+      <!--Page Body Start-->
+      <div class="page-body-wrapper">
+        <div class="page-body">
+          <div class="container-fluid">
+            <div class="card">
+              <div class="card-header">
+                <h5>PRODUCTION PLANNING</h5>
+              </div>
+              <div class="card-body">
+                <form action="">
+                  <!--Form Start-->
+                  <form action="#" id="pp-form">
+                    <!--/====First Form Start From Here====/-->
+                    <div class="row mb-2">
+                      <!--Order Date-->
+                      <div class="col-6 col-sm-6 col-md-3">
+                        <div class="form-group">
+                          <label class="form-label">Order Dt</label>
+                          <input
+                            type="text"
+                            data-language="en"
+                            class="datepicker-here form-control digits"
+                            placeholder="Order Dt"
+                            autocomplete="off"
+                            id="order-date"
+                            readonly
+                            required
+                          />
                         </div>
-                        <div class="card-body">
+                      </div>
 
-                            <!--Form Start-->
-                            <form action="#" id="pp-form">
-                                <div class="row">
-                                    <!--PO #-->
-                                    <div class="col-12 col-md-1 col-sm-12">
-                                        <div class="form-group">
-                                            <div class="form-label mb-2">PO #</div>
-                                            <div class="input-group">
-                                                <input type="number" class="form-control" placeholder="PO #"
-                                                    id="po-number" min="0" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Item-->
-                                    <div class="col-12 col-md-2 col-sm-12">
-                                        <div class="form-group">
-                                            <div class="select2-drpdwn">
-                                                <label class="form-label">ITEM</label>
-                                                <select class="js-example-basic-single" id="item-select">
-                                                    <optgroup label="Developer">
-                                                        <option value="AL">Alabama</option>
-                                                        <option value="WY">Wyoming</option>
-                                                    </optgroup>
-                                                    <optgroup label="Designer">
-                                                        <option value="WY">Peter</option>
-                                                        <option value="WY">Hanry Die</option>
-                                                        <option value="WY">John Doe</option>
-                                                    </optgroup>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Fabric Detail-->
-                                    <div class="col-12 col-md-2 col-sm-12">
-                                        <div class="form-group">
-                                            <div class="select2-drpdwn">
-                                                <label class="form-label">FABRIC DETAIL</label>
-                                                <select class="js-example-basic-single" required id="fabric-select">
-                                                    <optgroup label="Developer">
-                                                        <option value="AL">Alabama</option>
-                                                        <option value="WY">Wyoming</option>
-                                                    </optgroup>
-                                                    <optgroup label="Designer">
-                                                        <option value="WY">Peter</option>
-                                                        <option value="WY">Hanry Die</option>
-                                                        <option value="WY">John Doe</option>
-                                                    </optgroup>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--GSM-->
-                                    <div class="col-12 col-md-1 col-sm-12">
-                                        <div class="form-group">
-                                            <div class="form-label mb-2">GSM</div>
-                                            <div class="input-group">
-                                                <input type="number" class="form-control" placeholder="GSM" required
-                                                    id="gsm-number" min="0">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Date-->
-                                    <div class="col-12 col-md-2 col-sm-12">
-                                        <div class="date-picker">
-                                            <div class="form-group">
-                                                <div class="form-label mb-2">Date</div>
-                                                <div class="input-group">
-                                                    <input type="text" data-language="en"
-                                                        class="datepicker-here form-control digits"
-                                                        aria-describedby="basic-addon2" placeholder="Date"
-                                                        id="date-input" readonly>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Remarks-->
-                                    <div class="col-12 col-md-2 col-sm-12">
-                                        <div class="form-label mb-2">REMARKS</div>
-                                        <textarea class="form-control" rows="1" placeholder="Remarks..."
-                                            id="remark-input"></textarea>
-                                    </div>
-
-                                    <!--Submit Button-->
-                                    <div class="col-12 col-md-2 col-sm-12 d-flex align-items-center">
-                                        <button type="submit" class="btn btn-primary form-control mt-2"
-                                            id="pp-form-submit">Post</button>
-                                </div>
-                            </form>
-
-                            <!--Form End-->
-
-                            <!--Table Start-->
-                            <div class="w-100 mt-2">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">
-                                        <thead class="thead-light small">
-                                            <tr>
-                                                <th scope="col" style="width: 3%;">P.O#</th>
-                                                <th scope="col">ITEM</th>
-                                                <th scope="col">FABRIC DETAIL</th>
-                                                <th scope="col" style="width: 5%;">GSM</th>
-                                                <th scope="col" style="width: 5%;">DY DATE</th>
-                                                <th scope="col">REMARK AND NARRATION</th>
-                                                <th scope="col" style="width: 7%;">TYPE</th>
-                                                <th scope="col" style="width: 25%;">SIZE CHART</th>
-                                                <th scope="col" style="width: 3%;"><i class="fa fa-reorder"></i></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="main-table">
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <!--Table Start-->
-
-
-                            <!-- Large modal -->
-                            <form id="pp-modal-form">
-                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
-                                    aria-labelledby="myLargeModalLabel" aria-hidden="true" id="sub-table-modal">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title" id="myLargeModalLabel">Size Chart</h4>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">×</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="table-responsive">
-                                                    <table class="table table-xs size-chart-modal-table"
-                                                        id="size-chart-modal-table">
-                                                        <thead class="thead-light small">
-                                                            <tr>
-                                                                <th scope="col" style="width: 20%;">SIZE</th>
-                                                                <th scope="col" style="width: 10%;">QTY</th>
-                                                                <th scope="col" style="width: 10%;">COST</th>
-                                                                <th scope="col" style="width: 10%;">WS</th>
-                                                                <th scope="col" style="width: 10%;">RETAIL</th>
-                                                                <th scope="col" style="width: 10%;">MARGIN</th>
-                                                                <th scope="col" style="width: 0%;"><i
-                                                                        class="fa fa-reorder"></i></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody id="field-wrapper">
-                                                            <!--<tr>
-                                                                <td>
-                                                                    <div class="form-group">
-                                                                        <select class="form-control" name="titles[]" required id="multipleSizeSelect">
-                                                                            <option value="18">S</option>
-                                                                            <option value="10123">M</option>
-                                                                            <option value="10124">L</option>
-                                                                        </select>
-                                                                    </div>
-                                                                 </td>
-                                                                <td><input type="number" class="form-control" name="titles[]" required>
-                                                                </td>
-                                                                <td><input type="number" class="form-control" name="titles[]" required></td>
-                                                                <td><input type="number" class="form-control" name="titles[]" required></td>
-                                                                <td><input type="number" class="form-control" name="titles[]" required></td>
-                                                                <td><input type="number" class="form-control" name="titles[]" required></td>
-                                                                <td> <a id="add-modal-field"
-                                                                        style="cursor: pointer; display: block;"><i
-                                                                            class="fa fa-lg fa-plus-circle"></i></a>
-                                                                    <a id="remove-modal-field"
-                                                                        style="cursor: pointer;"><i
-                                                                            class="fa fa-lg fa-minus-circle"></i></a>
-                                                                </td>
-                                                            </tr>-->
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary"
-                                                    data-dismiss="modal" id="close-Modal">Close</button>
-                                                <button type="submit" class="btn btn-secondary"
-                                                    id="generate-sub-table" >Save changes</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                      <!--Customer-->
+                      <div class="col-6 col-sm-6 col-md-3">
+                        <div class="form-group">
+                          <div class="select2-drpdwn">
+                            <label class="form-label required_field"
+                              >Customer</label
+                            >
+                            <select
+                              class="js-example-basic-single"
+                              id="customer-select"
+                              required
+                            >
+                              <option></option>
+                              <option value="1">Customer A</option>
+                              <option value="2">Customer B</option>
+                              <option value="3">Customer C</option>
+                            </select>
+                          </div>
                         </div>
+                      </div>
+
+                      <!--Note-->
+                      <div class="col-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label">Note</label>
+                          <textarea
+                            rows="1"
+                            class="form-control"
+                            placeholder="Note"
+                            id="note"
+                            required
+                          ></textarea>
+                        </div>
+                      </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!--Page Body Ends-->
 
+                    <!--/====Second Form Start From Here====/-->
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="row mt-2">
+                          <!--PO #-->
+                          <div class="col-12 col-md-1 col-sm-12">
+                            <div class="form-group">
+                              <div class="form-label mb-2">PO #</div>
+                              <div class="input-group">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="PO #"
+                                  id="po-number"
+                                  min="0"
+                                  required
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--Item-->
+                          <div class="col-12 col-md-2 col-sm-12">
+                            <div class="form-group">
+                              <div class="select2-drpdwn">
+                                <label class="form-label">ITEM</label>
+                                <select
+                                  class="js-example-basic-single"
+                                  id="item-select"
+                                  required
+                                >
+                                  <option></option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--Fabric Detail-->
+                          <div class="col-12 col-md-2 col-sm-12">
+                            <div class="form-group">
+                              <div class="select2-drpdwn">
+                                <label class="form-label">FABRIC DETAIL</label>
+                                <select
+                                  class="js-example-basic-single"
+                                  id="fabric-select"
+                                  required
+                                >
+                                  <option></option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--GSM-->
+                          <div class="col-12 col-md-1 col-sm-12">
+                            <div class="form-group">
+                              <div class="form-label mb-2">GSM</div>
+                              <div class="input-group">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  placeholder="GSM"
+                                  required
+                                  id="gsm-number"
+                                  min="0"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--Date-->
+                          <div class="col-12 col-md-2 col-sm-12">
+                            <div class="form-group">
+                              <div class="form-label mb-2">Delivery Date</div>
+                              <div class="input-group">
+                                <input
+                                  type="text"
+                                  data-language="en"
+                                  class="datepicker-here form-control digits"
+                                  placeholder="Date"
+                                  id="date-input"
+                                  autocomplete="off"
+                                  readonly
+                                  required
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--Remarks-->
+                          <div class="col-12 col-md-2 col-sm-12">
+                            <div class="form-label mb-2">REMARKS</div>
+                            <textarea
+                              class="form-control"
+                              rows="1"
+                              placeholder="Remarks..."
+                              id="remark-input"
+                              required
+                            ></textarea>
+                          </div>
+
+                          <!--Type-->
+                          <div class="col-12 col-md-2 col-sm-12">
+                            <div class="form-group">
+                              <div class="select2-drpdwn">
+                                <label class="form-label">Type</label>
+                                <select
+                                  class="js-example-basic-single"
+                                  id="type-select"
+                                  required
+                                >
+                                  <option></option>
+                                  <option value="1">WHOLE</option>
+                                  <option value="2">TOP</option>
+                                  <option value="3">BOTTOM</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--Submit Button-->
+                          <div
+                            class="
+                              col-12 col-md-2 col-sm-12
+                              d-flex
+                              align-items-center
+                            "
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary form-control mt-2"
+                              id="pp-form-submit"
+                            >
+                              Post
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+
+                  <!--Form End-->
+
+                  <!--Table Start-->
+                  <div class="w-100 mt-2">
+                    <div class="table-responsive">
+                      <table class="table table-bordered table-hover">
+                        <thead class="thead-light small">
+                          <tr>
+                            <th scope="col" style="width: 3%">P.O#</th>
+                            <th scope="col">ITEM</th>
+                            <th scope="col">FABRIC DETAIL</th>
+                            <th scope="col" style="width: 5%">GSM</th>
+                            <th scope="col" style="width: 5%">DY DATE</th>
+                            <th scope="col">REMARKS</th>
+                            <th scope="col" style="width: 7%">TYPE</th>
+                            <th scope="col" style="width: 25%">SIZE CHART</th>
+                            <th scope="col" style="width: 3%">
+                              <i class="fa fa-reorder"></i>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody id="main-table">
+                          <tr>
+                            <td colspan="9" style="text-align: center">
+                              There's no data
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!--Table End-->
+
+                  <!--Form Submited to the Server-->
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="pp-main-form-submit"
+                  >
+                    Submit
+                  </button>
+                </form>
+
+                <!-- Large modal -->
+                <form id="pp-modal-form">
+                  <div
+                    class="modal fade bd-example-modal-lg"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="myLargeModalLabel"
+                    aria-hidden="true"
+                    id="sub-table-modal"
+                  >
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title" id="myLargeModalLabel">
+                            Size Chart
+                          </h4>
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">×</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row container mb-2 align-items-md-center justify-content-md-around">
+                            <h6 style="width: 27%;" class="m-0 text-center">Fill out with the </br> same values</h6>
+                            <input type="number" style="width: 12%;" class="mx-2 form-control" min="0" placeholder="Qty" id="all-qty">
+                            <input type="number" style="width: 12%;" class="mx-2 form-control" min="0" placeholder="Cost" id="all-cost">
+                            <input type="number" style="width: 12%;" class="mx-2 form-control" min="0" placeholder="WS" id="all-ws">
+                            <input type="number" style="width: 12%;" class="mx-2 form-control" min="0" placeholder="Retail" id="all-retail">
+                            <input type="number" style="width: 12%;" class="mx-2 form-control" min="0" placeholder="Mrg" id="all-margin">
+                          </div>
+                          <div class="table-responsive">
+                            <table
+                              class="table table-xs size-chart-modal-table"
+                              id="size-chart-modal-table"
+                            >
+                              <thead class="thead-light small">
+                                <tr>
+                                  <th scope="col" style="width: 20%">SIZE</th>
+                                  <th scope="col" style="width: 10%">QTY</th>
+                                  <th scope="col" style="width: 10%">COST</th>
+                                  <th scope="col" style="width: 10%">WS</th>
+                                  <th scope="col" style="width: 10%">RETAIL</th>
+                                  <th scope="col" style="width: 10%">MARGIN</th>
+                                  <th scope="col" style="width: 0%">
+                                    <i class="fa fa-reorder"></i>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody id="field-wrapper"></tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-dismiss="modal"
+                            id="close-Modal"
+                          >
+                            Close
+                          </button>
+                          <button
+                            type="submit"
+                            class="btn btn-secondary"
+                            id="generate-sub-table"
+                          >
+                            Save changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Page Body Ends-->
     </div>
     <!--page-wrapper Ends-->
 
@@ -291,8 +426,14 @@
     <script src="assets/js/script.js"></script>
 
     <!-- Select2 js -->
-    <script type="text/javascript" src="assets/js/select2/select2.full.min.js"></script>
-    <script type="text/javascript" src="assets/js/select2/select2-custom.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/js/select2/select2.full.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="assets/js/select2/select2-custom.js"
+    ></script>
 
     <!--Datepicker js-->
     <script src="assets/js/date-picker/datepicker.js"></script>
@@ -300,8 +441,6 @@
     <script src="assets/js/date-picker/datepicker.custom.js"></script>
 
     <!--Custom Script-->
-    <script src="customScript.js"></script>
-
-</body>
-
+    <script src="ppScript.js"></script>
+  </body>
 </html>
