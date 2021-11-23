@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pattern</title>
+
+    <!--Google font-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css" />
+
+    <!-- ico-font -->
+    <link rel="stylesheet" type="text/css" href="assets/css/icofont.css" />
+
+    <!-- Themify icon -->
+    <link rel="stylesheet" type="text/css" href="assets/css/themify.css" />
+
+    <!-- Flag icon -->
+    <link rel="stylesheet" type="text/css" href="assets/css/flag-icon.css" />
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+
+    <!-- App css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+    <!--Select2 css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/select2.css" />
+
+    <!-- Responsive css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
+
+    <!-- DatePicker css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/date-picker.css" />
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="patternStyle.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <div class="page-body-wrapper">
+        <div class="page-body">
+          <div class="container-fluid">
+            <div class="card">
+              <div class="card-header">
+                <h5>PATTERN</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-2">
+                    <div class="form-group">
+                      <label class="form-label">Lot Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Lot Name"
+                        id="po-number"
+                        min="0"
+                        required=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-2">
+                    <div class="form-group">
+                      <label class="form-label">Narration</label>
+                      <textarea
+                        rows="1"
+                        class="form-control"
+                        placeholder="Narration"
+                        id="note"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-2">
+                    <div class="form-group">
+                      <label class="form-label">Date</label>
+                      <input
+                        type="text"
+                        data-language="en"
+                        class="datepicker-here form-control digits"
+                        placeholder="Date"
+                        autocomplete="off"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-2">
+                    <div class="form-group">
+                      <label class="form-label">Total Qty</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Total Qty"
+                        min="0"
+                        id="show-total-qty"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-2">
+                    <div class="form-group">
+                      <label class="form-label">Total MATERIAL</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Total MATERIAL"
+                        min="0"
+                        id="show-total-material"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-2">
+                    <div class="form-group">
+                      <label class="form-label">Total FABRIC</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Total FABRIC"
+                        min="0"
+                        id="show-total-fabric"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-2">
+                    <div class="form-group">
+                      <label class="form-label">Avg Material Cost</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Avg Material Cost"
+                        min="0"
+                        id="show-avg-material-cost"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm">
+                    <thead class="thead-light" id="pattern-table-head">
+                      <tr>
+                        <th scope="col">Output Qty</th>
+                        <th scope="col" style="width: 10%">Shirt</th>
+                        <th scope="col" style="width: 10%">Color</th>
+                        <th scope="col">Front</th>
+                        <th scope="col">Back</th>
+                        <th scope="col">Trouser</th>
+                        <th scope="col">Dupatta</th>
+                        <th scope="col">Other</th>
+                        <th scope="col">Applic</th>
+                        <th scope="col">Is Material</th>
+                        <th scope="col">Avg Rate</th>
+                        <th scope="col">T.Qty</th>
+                        <th scope="col">Material</th>
+                        <th scope="col">Per PC</th>
+                        <th scope="col">Base Cost</th>
+                        <th scope="col">Material</th>
+                        <th scope="col">Cost Per Pc</th>
+                        <th scope="col"><i class="fa fa-reorder"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody id="pattern-table-body">
+                      <tr id="row">
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="output-qty"
+                            value="0"
+                            placeholder="0"
+                          />
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <div class="select2-drpdwn">
+                              <select
+                                class="js-example-basic-single"
+                                id="shirt-dropdown"
+                              >
+                                <option></option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <div class="select2-drpdwn">
+                              <select
+                                class="js-example-basic-single"
+                                id="color-dropdown"
+                              >
+                                <option></option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="front-input"
+                            value="0"
+                            placeholder="0"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="back-input"
+                            value="0"
+                            placeholder="0"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="trouser-input"
+                            value="0"
+                            placeholder="0"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="duppata-input"
+                            value="0"
+                            placeholder="0"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="other-input"
+                            value="0"
+                            placeholder="0"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="applic-input"
+                            value="0"
+                            placeholder="0"
+                          />
+                        </td>
+                        <td>
+                          <div class="checkbox checkbox-solid-dark is-Material">
+                            <input
+                              id="solid0"
+                              type="checkbox"
+                              value="daily"
+                              id="isMaterial-checkbox"
+                            />
+                            <label for="solid0" class="p-0"></label>
+                          </div>
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="avg-rate-input"
+                            value="0"
+                            placeholder="0"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="total-qty-ro"
+                            readonly
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="material-ro"
+                            readonly
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="per-pc-ro"
+                            readonly
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="base-cost-ro"
+                            readonly
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="material2-ro"
+                            readonly
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            class="form-control"
+                            min="0"
+                            id="cost-per-pc-ro"
+                            readonly
+                          />
+                        </td>
+                        <td>
+                          <a id="add-row-in-table"
+                            ><i class="fa fa-lg fa-plus-circle"></i
+                          ></a>
+                          <a id="remove-row-in-table"
+                            ><i class="fa fa-lg fa-minus-circle"></i
+                          ></a>
+                        </td>
+                      </tr>
+                      <!--
+                                        <tr>
+                                            <td colspan="18" style="text-align:center">
+                                                There's no data
+                                            </td>
+                                        </tr>
+                                        -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.js"></script>
+
+    <!-- Theme js-->
+    <script src="assets/js/script.js"></script>
+
+    <!-- Select2 js -->
+    <script
+      type="text/javascript"
+      src="assets/js/select2/select2.full.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="assets/js/select2/select2-custom.js"
+    ></script>
+
+    <!--Datepicker js-->
+    <script src="assets/js/date-picker/datepicker.js"></script>
+    <script src="assets/js/date-picker/datepicker.en.js"></script>
+    <script src="assets/js/date-picker/datepicker.custom.js"></script>
+
+    <!--Custom Script-->
+    <script src="patternScript.js"></script>
+  </body>
+</html>
